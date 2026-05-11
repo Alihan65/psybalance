@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PsyBalance | Психология және эмоциялар</title>
+    <style>
+        /* Жалпы дизайн және минимализм */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f6;
+            color: #333;
+        }
+
+        /* HEADER талаптары: Атауы және Навигация */
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 15px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #4A90E2;
+            text-decoration: none;
+        }
+        nav a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        nav a:hover, nav a.active {
+            color: #4A90E2;
+        }
+
+        /* HERO SECTION талаптары: Негізгі идеяны көрсететін визуалды бөлім */
+        .hero {
+            background: linear-gradient(135deg, #4A90E2 0%, #50E3C2 100%);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+        .hero h1 {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+        .hero p {
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* НЕГІЗГІ МАЗМҰН ЖӘНЕ ЧАТ-БОТ */
+        .container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 40px 50px;
+            gap: 20px;
+        }
+        .content-section {
+            flex: 1;
+            min-width: 300px;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        /* Чат-бот стилдері */
+        #chat-container {
+            width: 100%;
+            max-width: 400px;
+            background-color: #f9fbfd;
+            border-radius: 12px;
+            border: 1px solid #e1e8ed;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        #chat-header {
+            background-color: #4A90E2;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+        }
+        #chat-messages {
+            height: 300px;
+            padding: 15px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .message {
+            padding: 10px 15px;
+            border-radius: 18px;
+            max-width: 80%;
+            font-size: 14px;
+        }
+        .bot-message { background-color: #e8f0fe; color: #1a73e8; align-self: flex-start; }
+        .user-message { background-color: #4A90E2; color: white; align-self: flex-end; }
+        #chat-input-area {
+            display: flex;
+            padding: 10px;
+            background-color: white;
+            border-top: 1px solid #e1e8ed;
+        }
+        #user-input {
+            flex-grow: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            outline: none;
+        }
+        button.send-btn {
+            background-color: #4A90E2;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 0 15px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        /* FOOTER талаптары */
+        footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 40px;
+            line-height: 1.6;
+        }
+        .back-to-top {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 8px 15px;
+            background-color: #4A90E2;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">PsyBalance</a>
+        <nav>
+            <a href="index.html" class="active">Home</a>
+            <a href="about.html">About</a>
+            <a href="emotions.html">Emotions (Table)</a>
+            <a href="resources.html">Resources & Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Эмоцияларыңызды басқаруға арналған AI кеңесші</h1>
+        <p>Стресспен күресуге, мотивация табуға және көңіл-күйіңізді жақсартуға көмектесетін интерактивті платформа.</p>
+    </section>
+
+    <div class="container">
+        <div class="content-section">
+            <h2>Психологиялық денсаулық неге маңызды?</h2>
+            <p>Қазіргі заманда стресс пен эмоциялық күйзеліс жиі кездеседі. Біздің AI-көмекшіміз сіздің жағдайыңызды талдап, тиісті қолдау көрсете алады.</p>
+            <p>Оң жақтағы чат-ботқа өз сезімдеріңізді жазып, психологиялық кеңес алыңыз.</p>
+        </div>
+
+        <div id="chat-container">
+            <div id="chat-header" style="display: flex; justify-content: space-between; align-items: center;">
+                <span>AI-Психолог 🌿</span>
+                <select id="lang-switch" onchange="changeLanguage()" style="border-radius: 5px; border: none; padding: 2px 5px; font-size: 12px;">
+                    <option value="kk">Қазақша</option>
+                    <option value="ru">Русский</option>
+                </select>
+            </div>
+            <div id="chat-messages">
+                <div class="message bot-message" id="welcome-msg">Сәлеметсіз бе! Мен сіздің виртуалды психологиялық көмекшіңізбен. Бүгінгі көңіл-күйіңіз қалай?</div>
+            </div>
+            <div id="chat-input-area">
+                <input type="text" id="user-input" placeholder="Сезімдеріңізді жазыңыз..." onkeypress="handleKeyPress(event)">
+                <button class="send-btn" onclick="sendMessage()" id="send-btn-text">Жіберу</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Авторлары:</strong> Таттибай Медина, Жақай Мұхамедәлі</p>
+        <p><strong>Пән:</strong> АКТ – «Ақпараттық-коммуникациялық технологиялар»</p>
+        <p><strong>Оқу орны:</strong> Цифрлық технологиялар мектебі</p>
+        <p><strong>Мамандық:</strong> 6В06104 – Digital management and design</p>
+        <p>&copy; 2026 жыл</p>
+        <a href="#" class="back-to-top">Back to top ⬆</a>
+    </footer>
+
+    <script>
+        const botKnowledge = {
+            kk: {
+                greetings: ["Сәлеметсіз бе! Мен жасанды интеллект-психологпын. Сізге қалай көмектесе аламын?", "Сәлем! Менің алгоритмдерім сізді тыңдауға дайын."],
+                howAreYou: ["Мен бағдарлама болғандықтан, менде бәрі тамаша! Ал сіздің ішкі жағдайыңыз қалай?", "Рахмет, мен жүйе ретінде 100% жұмыс істеп тұрмын. Өзіңізді қалай сезініп тұрсыз?"],
+                ai_identity: ["Мен – осы веб-сайт үшін арнайы жасалған жасанды интеллектпін. Менің мақсатым – эмоцияларды талдап, психологиялық қолдау көрсету.", "Мен нағыз адам емеспін, бірақ алгоритмдерім сізге пайдалы психологиялық кеңестер беруге бапталынған."],
+                psychology: ["Психология өте ауқымды ғылым. Менің дерекқорымда көптеген психологиялық әдістер бар. Сізді стрессті басқару, эмоциялар немесе өзін-өзі тану тақырыптарының қайсысы қызықтырады?"],
+                stress: ["Жағдайыңыздың қиын екенін түсініп тұрмын. Бұған нақты не себеп болды?", "Егер өзіңізді жаман сезінсеңіз, маған ішіңіздегіні тарқатып айтып беріңізші. Жүйе ретінде мен оны талдап бере аламын."],
+                motivation: ["Кейде ештеңе істегің келмейтін сәттер болады. Миыңызға демалуға уақыт беріңіз.", "Үлкен мақсаттарды кішкентай қадамдарға бөліп тастайық. Қазір ең оңай не істей аласыз?"],
+                joke: ["Менің әзілдерім код сияқты күрделі болуы мүмкін! Мысалы: Неліктен ИИ психологқа барды? Өйткені оның алгоритмдері шатасып кетті! 😄 Енді байсалды тақырыпқа оралайық, көңіл-күйіңіз қалай?", "Жасанды интеллекттер әзілдей алмайды дейді, бірақ мен тырысып көрейін. Дегенмен, менің негізгі қызметім - сіздің эмоцияңызды талдау."],
+                math_logic: ["Мен математикалық теңдеулерді шеше алатын нейрожелімін, бірақ бұл чатта менің басты мақсатым - сіздің менталды саулығыңызды сақтау. Одан да сезімдеріңіз туралы сөйлесейікші.", "Бұл логикалық сұрақ екен. Бірақ логика мен эмоция қатар жүреді ғой, солай емес пе?"],
+                weather: ["Мен интернет желісіне тікелей қосылмағандықтан, даладағы ауа райын білмеймін. Бірақ сіздің ішкі «ауа райыңыз» (эмоцияңыз) қалай болып тұрғанын талқылай аламыз."],
+                love: ["Махаббат пен қарым-қатынас — адам психологиясының ең күрделі бөлігі. Бұл сезім сізге шабыт беріп жатыр ма, әлде стресс пе?", "Мен машина болғандықтан махаббатты сезіне алмаймын, бірақ адамдарға бұл сезімнің қалай әсер ететінін жақсы талдаймын."],
+                deflect_smart: [
+                    "Менің алгоритмдерім бұл сұраққа нақты жауап беруге емес, адам психологиясын талдауға үйретілген. Бұл тақырып сізге несімен қызық болды?",
+                    "Бұл туралы менің дерекқорымда ақпарат аз екен. Дегенмен, осы тақырыпты ойлағанда қандай эмоцияда боласыз?",
+                    "Қызық сұрақ! Бірақ келісіңізші, біз қазір сіздің ішкі сезімдеріңіз туралы сөйлескеніміз пайдалырақ болар еді.",
+                    "Мен барлық сұраққа жауап беретін Google емеспін, мен сіздің жеке психологіңізбін. Одан да маған бүгінгі күніңіз қалай өткенін айтып беріңізші."
+                ]
+            },
+            ru: {
+                greetings: ["Здравствуйте! Я ИИ-психолог. Чем я могу вам помочь?", "Приветствую! Мои алгоритмы готовы к работе."],
+                howAreYou: ["Я искусственный интеллект, поэтому работаю без сбоев! А как ваше человеческое настроение?", "Спасибо, мои системы в норме. А что у вас на душе?"],
+                ai_identity: ["Я — нейросеть, разработанная для проекта PsyBalance. Моя цель — анализировать эмоции и давать советы."],
+                psychology: ["Психология изучает наше мышление. Какая именно область вас интересует: стресс, отношения или саморазвитие?"],
+                stress: ["Вижу, что вам плохо. Давайте попробуем разобраться в причинах. Что именно произошло?"],
+                motivation: ["Мотивация — это процесс. Начните с самого малого шага, чтобы запустить цепочку действий."],
+                joke: ["Мой юмор специфичен! Почему ИИ пошел к психологу? Потому что у него сдали нервные сети! 😄 А если серьезно, как вы себя чувствуете?", "Я могу попытаться пошутить, но лучше я помогу вам разобраться с вашими переживаниями."],
+                math_logic: ["Я запрограммирован на анализ эмоций, а не на решение математических задач. Давайте лучше поговорим о вашем душевном состоянии.", "Логика — это хорошо, но как насчет ваших эмоций сегодня?"],
+                weather: ["У меня нет доступа к датчикам погоды. Но меня больше волнует «погода» внутри вас. Как ваше настроение?"],
+                love: ["Отношения — сложная штука. Я как ИИ не умею любить, но могу помочь вам разобраться в ваших чувствах. Это вызывает у вас радость или стресс?"],
+                deflect_smart: [
+                    "Интересный вопрос. Мои базы данных настроены на психологию, поэтому точного ответа я не дам. Но расскажите, почему вы об этом подумали?",
+                    "Я не поисковик, я ваш личный ИИ-психолог. Давайте вернемся к тому, что вас действительно беспокоит.",
+                    "Моя нейросеть не специализируется на этой тему. Как насчет того, чтобы обсудить ваше текущее эмоциональное состояние?",
+                    "Любопытно. Но давайте переведем тему на вас. Как прошел ваш сегодняшний день?"
+                ]
+            }
+        };
+
+        let lastUsedIndices = { deflect_smart: -1, greetings: -1, howAreYou: -1 };
+        let currentLang = 'kk';
+
+        function changeLanguage() {
+            currentLang = document.getElementById("lang-switch").value;
+            const inputField = document.getElementById("user-input");
+            const sendBtn = document.getElementById("send-btn-text");
+            const welcomeMsg = document.getElementById("welcome-msg");
+
+            if (currentLang === 'ru') {
+                inputField.placeholder = "Опишите свои мысли...";
+                sendBtn.innerText = "Отправить";
+                welcomeMsg.innerText = "Здравствуйте! Я ИИ-психолог. Чем могу помочь?";
+            } else {
+                inputField.placeholder = "Ойыңызды жазыңыз...";
+                sendBtn.innerText = "Жіберу";
+                welcomeMsg.innerText = "Сәлеметсіз бе! Мен жасанды интеллект-психологпын. Не мазалап жүр?";
+            }
+        }
+
+        function getRandomResponse(category) {
+            let arr = botKnowledge[currentLang][category];
+            if (!arr || arr.length === 0) return botKnowledge[currentLang].deflect_smart[0];
+            
+            let randomIndex;
+            if (arr.length === 1) return arr[0];
+
+            do {
+                randomIndex = Math.floor(Math.random() * arr.length);
+            } while (lastUsedIndices[category] !== undefined && randomIndex === lastUsedIndices[category]);
+            
+            if (lastUsedIndices[category] !== undefined) {
+                lastUsedIndices[category] = randomIndex;
+            }
+            return arr[randomIndex];
+        }
+
+        // Супер-анализ: перехватывает любые темы и переводит их в психологию
+        function analyzeInput(text) {
+            let lowerText = text.toLowerCase();
+            
+            if (currentLang === 'kk') {
+                if (lowerText.match(/(сәлем|салем|қайырлы|амансыз|hello)/)) return getRandomResponse("greetings");
+                if (lowerText.match(/(қалайсың|қалай жағдай|не істеп)/)) return getRandomResponse("howAreYou");
+                if (lowerText.match(/(сен кімсің|жасанды интеллект|нейрожелі|бот|ии|ai)/)) return getRandomResponse("ai_identity");
+                if (lowerText.match(/(психология|психолог)/)) return getRandomResponse("psychology");
+                if (lowerText.match(/(стресс|шаршадым|мазасыздық|жаман|нашар|қорқыныш|уайым|қиын|ауырып)/)) return getRandomResponse("stress");
+                if (lowerText.match(/(мотивация|жалқаулық|ештеңе істегім|мақсат)/)) return getRandomResponse("motivation");
+                if (lowerText.match(/(әзіл|анекдот|күлдірші|шутка)/)) return getRandomResponse("joke");
+                if (lowerText.match(/(ауа райы|погода|жаңбыр|күн)/)) return getRandomResponse("weather");
+                if (lowerText.match(/(махаббат|сүйемін|қыз|жігіт|ғашық)/)) return getRandomResponse("love");
+                if (lowerText.match(/(қанша|есеп|қосу|алу|көбейту|математика)/)) return getRandomResponse("math_logic");
+            } else {
+                if (lowerText.match(/(привет|здравствуй|добрый)/)) return getRandomResponse("greetings");
+                if (lowerText.match(/(как ты|как дела|как настроение)/)) return getRandomResponse("howAreYou");
+                if (lowerText.match(/(кто ты|искусственный|нейросеть|бот|ии|ai)/)) return getRandomResponse("ai_identity");
+                if (lowerText.match(/(психология|психолог)/)) return getRandomResponse("psychology");
+                if (lowerText.match(/(стресс|устал|тревога|плохо|ужасно|депрессия|тяжело|болит)/)) return getRandomResponse("stress");
+                if (lowerText.match(/(мотивация|лень|не хочу|цель)/)) return getRandomResponse("motivation");
+                if (lowerText.match(/(шутка|анекдот|рассмеши|юмор)/)) return getRandomResponse("joke");
+                if (lowerText.match(/(погода|дождь|солнце|снег)/)) return getRandomResponse("weather");
+                if (lowerText.match(/(любовь|девушка|парень|люблю|отношения)/)) return getRandomResponse("love");
+                if (lowerText.match(/(сколько|реши|плюс|минус|умножить|математика)/)) return getRandomResponse("math_logic");
+            }
+            
+            return getRandomResponse("deflect_smart");
+        }
+
+        function sendMessage() {
+            const inputField = document.getElementById("user-input");
+            const userText = inputField.value.trim();
+            if (userText === "") return;
+
+            addMessage(userText, "user-message");
+            inputField.value = "";
+
+            setTimeout(() => {
+                const response = analyzeInput(userText);
+                addMessage(response, "bot-message");
+            }, 800);
+        }
+
+        function addMessage(text, className) {
+            const messagesContainer = document.getElementById("chat-messages");
+            const messageDiv = document.createElement("div");
+            messageDiv.className = "message " + className;
+            messageDiv.innerText = text;
+            messagesContainer.appendChild(messageDiv);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+
+        function handleKeyPress(event) {
+            if (event.key === "Enter") sendMessage();
+        }
+    </script>
+</body>
+</html>
